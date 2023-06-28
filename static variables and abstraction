@@ -1,0 +1,39 @@
+//abstraction :is the process of hiding certain deatils ans showing the essential information to user.
+//abstraction can be achieved using abstract classes or interfaces
+//abstract method:declared but not implemented are called abstract method.
+//they will not hava body but terminate with a semicolon;
+ 
+abstract class Car{     //we cannot instantiate ab abstract class which means we cannto create object of an abstract class.
+    int maxSpeed;
+    
+    abstract void accelerate();//only declared but not implemented it is without a body
+    //they are created to force the child classes to implement them before using .we will use them after overriding  
+abstract void break();
+}
+ abstract class BMW extends Car{
+    void accelerate(){
+        System.out.println("bmw is acclerating ");
+    }
+
+}
+class BMW2 extends BMW{
+    void break(){
+        System.out.println("bmw is breaking in the above class");
+    }
+}
+abstract class A{  // an abstract class can exist without abstract methods
+    // we can simply mean we will not be able to create object of this class.
+    //abstract class can hava concrete methods.
+    int x=10;
+    void fun(){
+        System.out.println("hello i 'am A");
+    }
+}
+public class BalamSai{
+    public static void main(String args[]){
+        BMW  man=new BMW();
+        man.accelerate();
+        BMW2 women=new BMW2();
+        women.break();
+    }
+}
